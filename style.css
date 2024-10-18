@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Minecraft&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+  --primary: #FFAA01;
+  --secondary: #FF4E00;
+  --accent: #FFD580;
+  --background: #2C2C2C;
+  --text: #FFFFFF;
+  --shadow: rgba(0, 0, 0, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Loading screen styles */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loading-content {
+  text-align: center;
+}
+
+.loading-content h1 {
+  font-family: 'Minecraft', sans-serif;
+  color: var(--primary);
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: pulse 2s infinite;
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid var(--primary);
+  border-top: 6px solid var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+.loading-content p {
+  font-family: 'Minecraft', sans-serif;
+  color: var(--text);
+  font-size: 1.2rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.button-container {
+    display: flex; /* This makes the buttons line up horizontally */
+    gap: 10px; /* Optional: Adds space between buttons */
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 250px;
+  background-color: var(--secondary);
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+.sidebar h2 {
+  font-family: 'Minecraft', sans-serif;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 1.0s ease;
+}
+
+.sidebar ul li a:hover {
+  color: var(--primary);
+}
+
+/* Main content styles */
+.main-content {
+  flex-grow: 1;
+  margin-left: 250px;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+.header {
+  background-color: var(--secondary);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+.logo {
+  font-family: 'Minecraft', sans-serif;
+  font-size: 2.5rem;
+  color: var(--primary);
+  text-shadow: 2px 2px var(--shadow);
+}
+
+.content-section {
+  background-color: rgba(74, 143, 28, 0.1);
+  border: 2px solid var(--primary);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 10px 10px;
+  box-shadow: 0 4px 6px var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.content-section:hover {
+  transform: translateY(-5px);
+}
+
+h1 {
+  font-family: 'Minecraft', sans-serif;
+  color: var(--primary);
+  margin-bottom: 40px;
+  text-shadow: 4px 4px var(--shadow);
+  font-size: 3.5em;
+}
+
+h2 {
+  font-family: 'Minecraft', sans-serif;
+  color: var(--primary);
+  margin-bottom: 20px;
+  text-shadow: 3px 3px var(--shadow);
+}
+
+/* Button styles */
+.button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: var(--primary);
+  color: var(--text);
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px var(--shadow);
+  text-align: center;
+  margin: 10px 0;
+}
+
+.button:hover {
+  background-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px var(--shadow);
+}
+
+.button-primary {
+  background-color: var(--primary);
+}
+
+.button-secondary {
+  background-color: var(--secondary);
+}
+
+.changing-text {
+  font-family: 'Minecraft', sans-serif;
+  font-size: 2rem;
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 20px;
+  min-height: 60px;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; transform: translateY(-10px); }
+  20%, 80% { opacity: 1; transform: translateY(0); }
+}
+
+.changing-text span {
+  display: inline-block;
+  margin: 0;
+  animation: fadeInOut 5s infinite;
+}
+
+/* Login section styles */
+.login-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#admin-panel {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(74, 143, 28, 0.2);
+    border-radius: 10px;
+}
+
+#admin-panel h3 {
+    font-family: 'Minecraft', sans-serif;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+#new-command-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#new-command-form input, #new-command-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--primary);
+    background-color: var(--background);
+    color: var(--text);
+}
+
+#new-command-form textarea {
+    height: 100px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border: 3px solid var(--background);
+  border-radius: 6px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+  }
+  
+  .main-content {
+    margin-left: 0;
+  }
+  
+  .button {
+    display: block;
+    width: 50%;
+  }
+}
+    body {
+      overflow-x: hidden;
+    }
+
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .menu-toggle .bar {
+      width: 25px;
+      height: 3px;
+      background-color: var(--primary);
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      z-index: 998;
+    }
+
+    .sidebar {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .sidebar.active {
+      transform: translateX(0);
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        background-color: var(--background);
+        z-index: 999;
+        overflow-y: auto;
+      }
+
+      .main-content {
+        margin-left: 0;
+      }
+    }
